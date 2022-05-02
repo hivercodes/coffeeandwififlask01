@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, RadioField, DateTimeField
+from wtforms import StringField, SubmitField, SelectField, DateTimeField
 from wtforms.validators import DataRequired
 import csv
 import pandas
@@ -15,10 +15,10 @@ Bootstrap(app)
 
 class CafeForm(FlaskForm):
     cafe = StringField('Cafe name', validators=[DataRequired()])
-    website = StringField('website', validators=[DataRequired()])
-    coffee = RadioField('Coffee', choices=[('☕','☕'),('☕☕','☕☕'),('☕☕☕','☕☕☕'),('☕☕☕☕','☕☕☕☕'),('☕☕☕☕☕','☕☕☕☕☕')])
-    wifi = RadioField('WiFi', choices=[('💪','💪'),('💪💪','💪💪'),('💪💪💪','💪💪💪'),('💪💪💪💪','💪💪💪💪'),('💪💪💪💪💪','💪💪💪💪💪')])
-    power = RadioField('WiFi', choices=[('🔌', '🔌'), ('🔌🔌', '🔌🔌'), ('🔌🔌🔌', '🔌🔌🔌'), ('🔌🔌🔌🔌', '🔌🔌🔌🔌'),('🔌🔌🔌🔌🔌', '🔌🔌🔌🔌🔌')])
+    website = StringField('Website', validators=[DataRequired()])
+    coffee = SelectField('Coffee', choices=[('☕','☕'),('☕☕','☕☕'),('☕☕☕','☕☕☕'),('☕☕☕☕','☕☕☕☕'),('☕☕☕☕☕','☕☕☕☕☕')])
+    wifi = SelectField('WiFi', choices=[('💪','💪'),('💪💪','💪💪'),('💪💪💪','💪💪💪'),('💪💪💪💪','💪💪💪💪'),('💪💪💪💪💪','💪💪💪💪💪')])
+    power = SelectField('Power', choices=[('🔌', '🔌'), ('🔌🔌', '🔌🔌'), ('🔌🔌🔌', '🔌🔌🔌'), ('🔌🔌🔌🔌', '🔌🔌🔌🔌'),('🔌🔌🔌🔌🔌', '🔌🔌🔌🔌🔌')])
     opentime = DateTimeField(format='%Y-%m-%d %H:%M:%S', validators=[DataRequired()])
     closetime = DateTimeField(format='%Y-%m-%d %H:%M:%S', validators=[DataRequired()])
     submit = SubmitField('Submit')

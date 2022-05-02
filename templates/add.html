@@ -9,21 +9,24 @@
 
       <h1>Add a new cafe into the database</h1>
       <form method="POST", action="{{ url_for('cafes') }}">
-        {{ form.hidden_tag() }}
-        {{ form.cafe.label(class="form-label") }}
-        {{ form.cafe}}
-        {{ form.website.label(class="form-label") }}
-        {{ form.website}}
-        {{ form.coffee.label(class="form-label") }}
-        {{ form.coffee}}
-        {{ form.wifi.label(class="form-label") }}
-        {{ form.wifi}}
-        {{ form.power.label(class="form-label") }}
-        {{ form.power}}
-        {{ form.opentime.label(class="form-label") }}
-        {{ form.opentime}}
-        {{ form.closetime.label(class="form-label") }}
-        {{ form.closetime}}
+        {{ form.hidden_tag() }} <br>
+        {{ form.cafe.label(class="form-label") }}<br>
+        {{ form.cafe}}<br>
+        {{ form.website.label(class="form-label") }}<br>
+        {{ form.website}}<br>
+        {{ form.coffee.label(class="form-label") }}<br>
+        {{ form.coffee}}<br>
+        {{ form.wifi.label(class="form-label") }}<br>
+        {{ form.wifi}}<br>
+        {{ form.power.label(class="form-label") }}<br>
+        {{ form.power}}<br>
+        {{ form.opentime.label(class="form-label") }}<br>
+        {{ form.opentime}}<br>
+        {{ form.closetime.label(class="form-label") }}<br>
+        {{ form.closetime}} <br>
+        <br>
+        {{ form.submit }}
+        <br>
 
 
 
