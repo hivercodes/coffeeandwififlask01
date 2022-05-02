@@ -65,6 +65,16 @@ def add_cafe():
         closetime = form.closetime.data
         form.closetime.data = ''
 
+        form_data = [cafe, website, coffee, wifi, power, opentime, closetime]
+        print(form_data)
+        f = open('cafe-data', 'a')
+        writer = csv.writer(f)
+        writer.writerow(form_data)
+        return render_template("add.html")
+
+
+
+
 
     # Exercise:
     # Make the form write a new row into cafe-data.csv
@@ -79,7 +89,8 @@ def cafes():
         list_of_rows = []
         for row in csv_data:
             list_of_rows.append(row)
-    return render_template('cafes.html', cafes=list_of_rows)
+        list = list_of_rows[1:]
+    return render_template('cafes.html', cafes=list)
 
 
 if __name__ == '__main__':
