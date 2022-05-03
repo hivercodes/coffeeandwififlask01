@@ -46,8 +46,10 @@ def add_cafe():
 
         #print("True")
         #print(form.cafe.data)
-        #with open(test.csv) as write_data:
-
+        gathered_data = [form.cafe.data, form.website.data,form.opentime.data,form.closetime.data, form.coffee.data, form.wifi.data,form.power.data]
+        with open("cafe-data.csv", "a", newline='') as write_data:
+            writer = csv.writer(write_data)
+            writer.writerow(gathered_data)
 
         return render_template("index.html")
 
